@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Reserva tu bicicleta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
 <title>Reservas | reserva tu bicicleta en medellín. </title>
 <h1>Reserva tu bicicleta</h1>
   <header>
@@ -66,8 +71,8 @@
       <legend>Tus datos</legend>
   <label for="nombre">Nombre completo *</label>
 <input type="tel" id="nombre" name="nombre" required>
-<label for="cel">Celular</label>
-<input type="number" id="cel" name="cel" required>
+<label for="cel">Celular *</label>
+<input type="tel" id="cel" name="cel" pattern="3[0-9]{9}" maxlength="10" inputmode="numeric" required>
 <label for="mail">Correo electronico</label>
 <input type="email" id="mail" name="mail">
 <label for="eps">Eps/seguridad social *</label>
