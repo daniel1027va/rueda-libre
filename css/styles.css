@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== Formulario: heredar la fuente ===== */
-input, select, button {
+input, select, button, textarea {
   font-family: inherit;
 }
 
@@ -76,7 +76,45 @@ button {
 }
 
 /* ===== Foco visible para navegar con teclado ===== */
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 3px solid var(--color-azul-noche);
   outline-offset: 2px;
+}
+/* ===== Menú de navegación ===== */
+#menu a {
+  color: var(--color-blanco);
+}
+
+#menu a.activo {
+  color: var(--color-naranja-pedal);
+  font-weight: 600;
+}
+
+#menu a:hover,
+#menu a:focus {
+  background-color: var(--color-naranja-pedal);
+  color: var(--color-azul-noche);
+}
+
+#menu a:focus-visible {
+  outline-color: var(--color-blanco);
+}
+/* ===== Botón de llamada a la acción ===== */
+.boton-reservar {
+  display: inline-block;
+  background-color: var(--color-naranja-pedal);
+  color: var(--color-azul-noche);
+  padding: var(--espacio-pequeno) var(--espacio-grande);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.boton-reservar:hover {
+  background-color: var(--color-verde-ruta);
+  color: var(--color-blanco);
+}
+
+.boton-reservar:focus-visible {
+  outline: 3px solid var(--color-blanco);
+  outline-offset: 3px;
 }
