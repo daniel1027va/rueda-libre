@@ -1,3 +1,9 @@
+/* ===== Todos los elementos incluyen relleno y borde en su ancho ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 /* ===== Variables globales ===== */
 :root {
   /* Colores de marca */
@@ -117,4 +123,91 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .boton-reservar:focus-visible {
   outline: 3px solid var(--color-blanco);
   outline-offset: 3px;
+}
+/* ===== Contenido principal centrado y con ancho máximo ===== */
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--espacio-mediano);
+}
+
+/* ===== Portada con altura relativa a la ventana ===== */
+header {
+  min-height: 50vh;
+}
+/* ===== Tarjetas de servicios ===== */
+.tarjeta {
+  background-color: var(--color-blanco);
+  padding: var(--espacio-mediano);
+  border: 1px solid var(--color-gris-asfalto);
+  border-radius: 0.75rem;
+  margin-bottom: var(--espacio-grande);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* ===== Tablas ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--espacio-grande);
+  background-color: var(--color-blanco);
+}
+
+th,
+td {
+  padding: var(--espacio-mediano);
+  border: 1px solid var(--color-gris-asfalto);
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-verde-ruta);
+  color: var(--color-blanco);
+}
+/* ===== Formulario ===== */
+form {
+  max-width: 40rem;
+}
+
+label {
+  display: block;
+  margin-top: var(--espacio-mediano);
+  margin-bottom: var(--espacio-pequeno);
+  font-weight: 600;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: var(--espacio-pequeno) var(--espacio-mediano);
+  border: 1px solid var(--color-gris-asfalto);
+  border-radius: 0.375rem;
+}
+
+form button {
+  margin-top: var(--espacio-grande);
+  padding: var(--espacio-mediano) var(--espacio-grande);
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
+/* ===== Menú en fila ===== */
+#menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu li {
+  display: inline-block;
+}
+
+#menu a {
+  display: inline-block;
+  padding: var(--espacio-pequeno) var(--espacio-mediano);
 }
