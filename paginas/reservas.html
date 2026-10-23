@@ -6,17 +6,22 @@
   <meta name="description" content="Reserva tu bicicleta.">
 <title>Reservas | reserva tu bicicleta en medellín. </title>
 <h1>Reserva tu bicicleta</h1>
- <h2></h2><a href="reservas.html"><STRONG>¡RESERVA TU BICICLETA AHORA!</STRONG></a></h2>
+  <header>
+  <img src="../img/portada.png.jpg" alt="bicicletas rojas en fila" width="300">
+  <h2></h2><a href="paginas/reservas.html"><STRONG>¡RESERVA TU BICICLETA AHORA!</STRONG></a></h2>
+  <nav>
  <h2>Menú</h2>
-
   <ul>
     <li><p><a href="../index.html">Inicio</a></p></li>
     <li><a href="tarifas.html">Tarifas y servicios</a></p></li>
     <li><a href="reservas.html">reservas</a></p></li>
   </ul>
-  <h2>Tarifas de alquiler</h2>
+  </nav>
+  </header>
+  <main>
+  <h2>Conoce nuestros horarios</h2>
   <table border="1">
-    <caption>Precios de alquiler por tipo de bicicleta</caption>
+    <caption>agenda</caption>
     <thead>
       <tr>
         <th scope="col">Dia</th>
@@ -56,7 +61,57 @@
       </tr>
     </tbody>
   </table>
-   <h2></h2><a href="reservas.html"><STRONG>¡RESERVA TU BICICLETA AHORA!</STRONG></a></h2>
+  <form action="gracias.html" method="post"> <h2>Llena el formulario y reserva ahora.</h2>
+    <fieldset>
+      <legend>Tus datos</legend>
+  <label for="nombre">Nombre completo *</label>
+<input type="tel" id="nombre" name="nombre" required>
+<label for="cel">Celular</label>
+<input type="number" id="cel" name="cel" required>
+<label for="mail">Correo electronico</label>
+<input type="email" id="mail" name="mail">
+<label for="eps">Eps/seguridad social *</label>
+<input type="text" id="eps" name="eps" required>
+    </fieldset>
+    <fieldset>
+      <legend>Tu alquiler</legend>
+<label for="bicicleta">Tipo de bicileta *</label>
+<select name="bicicleta" id="bicicleta" required><option value="">Seleciona una bicicleta</option><option value="urbana">Urbana</option><option value="montaña">Montaña</option><option value="electrica">Eléctrica</option></select>
+<label for="cantidad">Cantidad de bicicletas *</label>
+<input type="number" id="cantidad" name="cantidad" min="1" max="6" required>
+<label for="horario">Horario *</label>
+<select name="horario" id="horario" required>
+  <option value="">Selecciona un horario...</option>
+  <option value="lunes-7am">Lunes 7AM-8AM</option>
+  <option value="lunes-8am">Lunes 8AM-9AM</option>
+  <option value="lunes-9am">Lunes 9AM-10AM</option>
+  <option value="martes-7am">Martes 7AM-8AM</option>
+  <option value="martes-8am">Martes 8AM-9AM</option>
+  <option value="martes-9am">Martes 9AM-10AM</option>
+  <option value="miercoles-7am">Miércoles 7AM-8AM</option>
+  <option value="miercoles-8am">Miércoles 8AM-9AM</option>
+  <option value="miercoles-9am">Miércoles 9AM-10AM</option>
+  <option value="jueves-7am">Jueves 7AM-8AM</option>
+  <option value="jueves-8am">Jueves 8AM-9AM</option>
+  <option value="jueves-9am">Jueves 9AM-10AM</option>
+  <option value="viernes-7am">Viernes 7AM-8AM</option>
+  <option value="viernes-8am">Viernes 8AM-9AM</option>
+  <option value="viernes-9am">Viernes 9AM-10AM</option>
+</select>
+    </fieldset>
+    <fieldset>
+      <legend>Confirmacion</legend>
+      <label for="casco">Si, cuento con casco</label>
+      <input type="checkbox" id="casco" name="casco">
+      <label for="acepto">Acepto los terminos y condiciones</label>
+      <input type="checkbox" id="acepto" name="acepto" required>
+      <label for="comentario">Dejanos una sugerencia(maximo 300 caracteres)</label>
+      <textarea maxlength="300"></textarea>
+    </fieldset>
+    <button type="submit">Enviar</button>
+  </form>
+  </main>
+   <a href="reservas.html"><STRONG>¡RESERVA TU BICICLETA AHORA!</STRONG></a></h2>
       <footer>
         <p>Rueda Libre</p>
         <address>
