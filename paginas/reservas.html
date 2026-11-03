@@ -103,116 +103,215 @@
 </header>
   <main>
   <h2>Conoce nuestros horarios</h2>
-  <table border="1">
-    <caption>agenda</caption>
-    <thead>
-      <tr>
-        <th scope="col">Dia</th>
-        <th scope="col">horario</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Lunes</th>
-        <td>7AM-8AM</td>
-        <td>8AM-9AM</td>
-        <td>9AM-10AM</td>
-      </tr>
-      <tr>
-        <th scope="row">Martes</th>
-        <td>7AM-8AM</td>
-        <td>8AM-9AM</td>
-        <td>9AM-10AM</td>
-      </tr>
-      <tr>
-        <th scope="row">Miercoles</th>
-        <td>7AM-8AM</td>
-        <td>8AM-9AM</td>
-        <td>9AM-10AM</td>
-      </tr>
-      <tr>
-        <th scope="row">Jueves</th>
-        <td>7AM-8AM</td>
-        <td>8AM-9AM</td>
-        <td>9AM-10AM</td>
-      </tr>
-            <tr>
-        <th scope="row">Viernes</th>
-        <td>7AM-8AM</td>
-        <td>8AM-9AM</td>
-        <td>9AM-10AM</td>
-      </tr>
-    </tbody>
-  </table>
-  <section id="contenedor-todo">
-    <section id="datos">
-  <form action="gracias.html" method="post"> <h2>Llena el formulario y reserva ahora.</h2>
-    <fieldset>
-      <legend>Tus datos</legend>
-      <div class="juntar">
-        <div class="nombrecel">
-  <label for="nombre">Nombre completo *</label>
-<input type="tel" id="nombre" name="nombre" required>
+  <table class="table table-bordered table-striped">
+  <thead class="table-success">
+    <tr>
+      <th scope="col">Día</th>
+      <th scope="col" colspan="3">Horarios</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row">Lunes</th>
+      <td>7AM-8AM</td>
+      <td>8AM-9AM</td>
+      <td>9AM-10AM</td>
+    </tr>
+    <tr>
+      <th scope="row">Martes</th>
+      <td>7AM-8AM</td>
+      <td>8AM-9AM</td>
+      <td>9AM-10AM</td>
+    </tr>
+    <tr>
+      <th scope="row">Miércoles</th>
+      <td>7AM-8AM</td>
+      <td>8AM-9AM</td>
+      <td>9AM-10AM</td>
+    </tr>
+    <tr>
+      <th scope="row">Jueves</th>
+      <td>7AM-8AM</td>
+      <td>8AM-9AM</td>
+      <td>9AM-10AM</td>
+    </tr>
+    <tr>
+      <th scope="row">Viernes</th>
+      <td>7AM-8AM</td>
+      <td>8AM-9AM</td>
+      <td>9AM-10AM</td>
+    </tr>
+  </tbody>
+</table>
+<div class="container my-4">
+  <div class="row g-4">
+    <section id="datos" class="col-12 col-md-8">
+      <div class="alert alert-info alert-dismissible fade show" role="alert">
+  <strong>¡Recuerda!</strong> Para realizar el alquiler debes presentar tu documento de identidad.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
 </div>
-<div class="nombrecel">
-<label for="cel">Celular *</label>
-<input type="tel" id="cel" name="cel" pattern="3[0-9]{9}" maxlength="10" inputmode="numeric" required>
+
+<form action="gracias.html" method="post" class="needs-validation" novalidate>
+
+  <div class="row g-3">
+
+    <div class="col-12">
+      <h2>Llena el formulario y reserva ahora.</h2>
+    </div>
+
+    <div class="col-md-6">
+      <label for="nombre" class="form-label">Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre" class="form-control" required>
+      <div class="invalid-feedback">Escribe tu nombre completo para identificar tu reserva.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="cel" class="form-label">Celular *</label>
+      <input type="tel" id="cel" name="cel" class="form-control" pattern="3[0-9]{9}" maxlength="10" inputmode="numeric" required>
+      <div class="invalid-feedback">Ingresa un celular colombiano de 10 dígitos que comience por 3.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="mail" class="form-label">Correo electrónico</label>
+      <input type="email" id="mail" name="mail" class="form-control">
+      <div class="invalid-feedback">Ingresa un correo electrónico válido.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="eps" class="form-label">EPS / Seguridad social *</label>
+      <input type="text" id="eps" name="eps" class="form-control" required>
+      <div class="invalid-feedback">Escribe tu EPS o entidad de seguridad social.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="bicicleta" class="form-label">Tipo de bicicleta *</label>
+      <select name="bicicleta" id="bicicleta" class="form-select" required>
+        <option value="">Selecciona una bicicleta</option>
+        <option value="urbana">Urbana</option>
+        <option value="montaña">Montaña</option>
+        <option value="electrica">Eléctrica</option>
+      </select>
+      <div class="invalid-feedback">Selecciona el tipo de bicicleta que deseas alquilar.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="cantidad" class="form-label">Cantidad de bicicletas *</label>
+      <input type="number" id="cantidad" name="cantidad" class="form-control" min="1" max="6" required>
+      <div class="invalid-feedback">Selecciona una cantidad entre 1 y 6 bicicletas.</div>
+    </div>
+
+    <div class="col-12">
+      <label for="horario" class="form-label">Horario *</label>
+      <select name="horario" id="horario" class="form-select" required>
+        <option value="">Selecciona un horario...</option>
+        <option value="lunes-7am">Lunes 7AM-8AM</option>
+        <option value="lunes-8am">Lunes 8AM-9AM</option>
+        <option value="lunes-9am">Lunes 9AM-10AM</option>
+        <option value="martes-7am">Martes 7AM-8AM</option>
+        <option value="martes-8am">Martes 8AM-9AM</option>
+        <option value="martes-9am">Martes 9AM-10AM</option>
+        <option value="miercoles-7am">Miércoles 7AM-8AM</option>
+        <option value="miercoles-8am">Miércoles 8AM-9AM</option>
+        <option value="miercoles-9am">Miércoles 9AM-10AM</option>
+        <option value="jueves-7am">Jueves 7AM-8AM</option>
+        <option value="jueves-8am">Jueves 8AM-9AM</option>
+        <option value="jueves-9am">Jueves 9AM-10AM</option>
+        <option value="viernes-7am">Viernes 7AM-8AM</option>
+        <option value="viernes-8am">Viernes 8AM-9AM</option>
+        <option value="viernes-9am">Viernes 9AM-10AM</option>
+      </select>
+      <div class="invalid-feedback">Selecciona uno de los horarios disponibles.</div>
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input type="checkbox" id="casco" name="casco" class="form-check-input">
+        <label for="casco" class="form-check-label">Sí, cuento con casco</label>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input type="checkbox" id="acepto" name="acepto" class="form-check-input" required>
+        <label for="acepto" class="form-check-label">Acepto las políticas de alquiler</label>
+        <div class="invalid-feedback">Debes aceptar las políticas de alquiler para continuar.</div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button type="button" class="btn btn-outline-primary"
+              data-bs-toggle="modal" data-bs-target="#politicasModal">
+        Ver políticas de alquiler
+      </button>
+    </div>
+
+    <div class="col-12">
+      <label for="comentario" class="form-label">Déjanos una sugerencia (máximo 300 caracteres)</label>
+      <textarea id="comentario" name="comentario" class="form-control" maxlength="300"></textarea>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+
+  </div>
+</form>
+
+<div class="modal fade" id="politicasModal" tabindex="-1"
+     aria-labelledby="politicasModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="politicasModalLabel">Políticas de alquiler</h5>
+        <button type="button" class="btn-close"
+                data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body">
+        <ol>
+          <li>Presentar el documento de identidad al momento del alquiler.</li>
+          <li>Utilizar casco durante todo el recorrido.</li>
+          <li>Devolver la bicicleta en el horario acordado.</li>
+          <li>Entregar la bicicleta en buen estado.</li>
+          <li>Informar cualquier daño o inconveniente durante el alquiler.</li>
+        </ol>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+                data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-<label for="mail">Correo electronico</label>
-<input type="email" id="mail" name="mail">
-<label for="eps">Eps/seguridad social *</label>
-<input type="text" id="eps" name="eps" required>
-    </fieldset>
-    <fieldset>
-      <legend>Tu alquiler</legend>
-<label for="bicicleta">Tipo de bicileta *</label>
-<select name="bicicleta" id="bicicleta" required><option value="">Seleciona una bicicleta</option><option value="urbana">Urbana</option><option value="montaña">Montaña</option><option value="electrica">Eléctrica</option></select>
-<label for="cantidad">Cantidad de bicicletas *</label>
-<input type="number" id="cantidad" name="cantidad" min="1" max="6" required>
-<label for="horario">Horario *</label>
-<select name="horario" id="horario" required>
-  <option value="">Selecciona un horario...</option>
-  <option value="lunes-7am">Lunes 7AM-8AM</option>
-  <option value="lunes-8am">Lunes 8AM-9AM</option>
-  <option value="lunes-9am">Lunes 9AM-10AM</option>
-  <option value="martes-7am">Martes 7AM-8AM</option>
-  <option value="martes-8am">Martes 8AM-9AM</option>
-  <option value="martes-9am">Martes 9AM-10AM</option>
-  <option value="miercoles-7am">Miércoles 7AM-8AM</option>
-  <option value="miercoles-8am">Miércoles 8AM-9AM</option>
-  <option value="miercoles-9am">Miércoles 9AM-10AM</option>
-  <option value="jueves-7am">Jueves 7AM-8AM</option>
-  <option value="jueves-8am">Jueves 8AM-9AM</option>
-  <option value="jueves-9am">Jueves 9AM-10AM</option>
-  <option value="viernes-7am">Viernes 7AM-8AM</option>
-  <option value="viernes-8am">Viernes 8AM-9AM</option>
-  <option value="viernes-9am">Viernes 9AM-10AM</option>
-</select>
-    </fieldset>
-    <fieldset>
-      <legend>Confirmacion</legend>
-      <label for="casco">Si, cuento con casco</label>
-      <input type="checkbox" id="casco" name="casco">
-      <label for="acepto">Acepto los terminos y condiciones</label>
-      <input type="checkbox" id="acepto" name="acepto" required>
-      <label for="comentario">Dejanos una sugerencia(maximo 300 caracteres)</label>
-      <textarea maxlength="300"></textarea>
-    </fieldset>
-    <button type="submit">Enviar</button>
-  </form>
     </section>
-          <section id="contacto">
-        <address>
-            Contacto: <a href="mailto:rueda-libre@riwi.io">rueda-libre@riwi.io</a>
-        </address>
-        <a href="reservas.html"><STRONG>¡RESERVA TU BICICLETA AHORA!</STRONG></a></h2>
-        <p>
-  Teléfono:
-  <a href="tel:+573001234567">300 123 4567</a>
-</p>
-<img src="/img/correo.png" alt="Icono de correo" width="100">
-        </section>
+         <section id="contacto" class="col-12 col-md-4">
+  <div class="p-3 border rounded">
+    <h2>Información de contacto</h2>
+
+    <address>
+      Contacto:
+      <a href="mailto:rueda-libre@riwi.io">rueda-libre@riwi.io</a>
+    </address>
+
+    <a href="reservas.html">
+      <strong>¡RESERVA TU BICICLETA AHORA!</strong>
+    </a>
+
+    <p>
+      Teléfono:
+      <a href="tel:+573001234567">300 123 4567</a>
+    </p>
+
+    <img src="../img/correo.png"
+         alt="Icono de correo"
+         width="100"
+         class="img-fluid">
+  </div>
+</section>
   </section>
   </main>
         <a href="reservas.html"
@@ -232,5 +331,27 @@
      <p>&copy; 2026 Mi Sitio Web.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script>
+  (() => {
+    'use strict'
+
+    const forms = document.querySelectorAll('.needs-validation')
+
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
+
+</body>
+</html>
     </body>
 </html>
