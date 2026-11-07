@@ -1,0 +1,235 @@
+
+======================================================================
+1. ROL DE HTML, CSS Y JAVASCRIPT EN EL SITIO
+======================================================================
+HTML - estructura y significado del contenido.
+  Ejemplo: <label for="correo">Correo electronico</label>
+           <input type="email" id="correo">
+  Define que hay un campo de correo y lo asocia con su etiqueta; un
+  lector de pantalla lo anuncia correctamente sin necesidad de estilos.
+
+CSS - presentacion (en este proyecto, con utilidades de Tailwind).
+  Ejemplo: class="rounded-lg bg-yellow-400 px-8 py-4 hover:bg-yellow-300"
+  en el boton "Inscribete": color, bordes, espaciado y cambio al pasar
+  el mouse.
+
+JavaScript - comportamiento e interaccion.
+  Ejemplo: validar el formulario al enviarlo y mostrar la alerta de exito
+  (role="status") solo si el correo y el celular son correctos.
+  [COMPLETAR: indica si ya lo implementaste o si queda como mejora]
+
+======================================================================
+2. TABLA DE RUTAS (archivo de origen -> destino -> ruta escrita)
+======================================================================
+Estructura: raiz/ (index.html, css/, img/, paginas/, src/output.css)
+            nocturna/ (index.html, componentes.html, prototipo.html)
+
+ORIGEN                      DESTINO                   RUTA ESCRITA
+--------------------------  ------------------------  ---------------------------
+nocturna/index.html         src/output.css            ../src/output.css
+nocturna/componentes.html   src/output.css            ../src/output.css
+nocturna/index.html         nocturna/componentes.html ./componentes.html
+nocturna/componentes.html   nocturna/index.html       ./index.html
+nocturna/index.html         img/luces-del-centro.jpg  ../img/luces-del-centro.jpg
+nocturna/componentes.html   img/luces-del-centro.jpg  ../img/luces-del-centro.jpg
+[COMPLETAR]  index.html (raiz)  paginas/...           [COMPLETAR]
+[COMPLETAR]  index.html (raiz)  css/...               [COMPLETAR]
+
+Verificacion (ajusta la tabla a lo que salga):
+  grep -nE '(href|src)="' nocturna/*.html index.html paginas/*.html
+
+======================================================================
+3. PRUEBAS DE VALIDACION (datos incorrectos)
+======================================================================
+Reglas: correo obligatorio con formato nombre@dominio.ext, sin espacios;
+celular obligatorio, solo numeros, 10 digitos, empieza por 3.
+
+ #  CAMPO    DATO DE PRUEBA        RESULTADO ESPERADO          RESULTADO OBTENIDO
+--  -------  --------------------  --------------------------  ------------------
+ 1  correo   (vacio)               Rechaza: obligatorio        [COMPLETAR]
+ 2  correo   juan                  Rechaza: falta @            [COMPLETAR]
+ 3  correo   juan@                 Rechaza: falta dominio      [COMPLETAR]
+ 4  correo   juan@correo           Rechaza: falta .com         [COMPLETAR]
+ 5  correo   juan perez@correo.co  Rechaza: tiene espacio      [COMPLETAR]
+ 6  correo   juan@correo.com       Acepta                      [COMPLETAR]
+ 7  celular  (vacio)               Rechaza: obligatorio        [COMPLETAR]
+ 8  celular  300123                Rechaza: menos de 10        [COMPLETAR]
+ 9  celular  300123456789          Rechaza: mas de 10          [COMPLETAR]
+10  celular  3001abc789            Rechaza: contiene letras    [COMPLETAR]
+11  celular  1001234567            Rechaza: no empieza por 3   [COMPLETAR]
+12  celular  3001234567            Acepta                      [COMPLETAR]
+
+Observaciones: [COMPLETAR. Ojo: type="email" del navegador suele aceptar
+"juan@correo" (prueba 4); por eso se agrega un pattern.]
+
+======================================================================
+4. BOX-SIZING (DevTools > Computed)
+======================================================================
+Elemento medido: la seccion del hero (max-w-4xl, p-8 md:p-14, ventana >= 768 px).
+
+  box-sizing: border-box (Tailwind, por defecto) -> ancho total: [COMPLETAR] px
+  box-sizing: content-box (cambiado a mano)      -> ancho total: [COMPLETAR] px
+
+Explicacion: con border-box el ancho incluye relleno y borde. Con
+content-box el ancho solo cuenta el contenido, y el relleno se suma por
+fuera, asi que la tarjeta crece. [COMPLETAR: diferencia observada]
+
+======================================================================
+5. VENTANA ESTRECHA: ENCABEZADO Y PIE
+======================================================================
+Reduje el ancho poco a poco desde 1280 px hasta 320 px.
+  Encabezado: [COMPLETAR: en que ancho cambia, si el menu se apila o
+              colapsa, si hay desborde horizontal]
+  Pie:        [COMPLETAR: lo mismo; si las columnas pasan a una sola]
+
+======================================================================
+6. COLUMNAS EN MODO DISPOSITIVO (DevTools)
+======================================================================
+ ANCHO     COLUMNAS (galeria/flota)    COLUMNAS (rutas de nocturna)
+ -------   -------------------------   ----------------------------
+ 1280 px   [COMPLETAR]                 1 (cards apiladas, sin cuadricula)
+ 900 px    [COMPLETAR]                 1
+ 500 px    [COMPLETAR]                 1
+
+======================================================================
+7. FLEXBOX O GRID POR CASO
+======================================================================
+Criterio: Flexbox reparte elementos en UNA dimension (fila o columna);
+Grid organiza en DOS dimensiones (filas y columnas a la vez).
+
+ CASO               USE         POR QUE
+ -----------------  ----------  -----------------------------------------
+ Portada (hero)     Flexbox     Centrar una sola caja en vertical y
+                                horizontal: min-h-screen flex items-center
+                                justify-center.
+ Galeria            Grid        Tarjetas en filas Y columnas con huecos
+                                iguales. [COMPLETAR: clases usadas]
+ Reservas           Grid        [COMPLETAR: por que]
+ Fila del           Flexbox     Etiqueta + campo + boton alineados en una
+ formulario                     sola linea que se apila al estrechar.
+ Encabezado         Flexbox     Logo a un lado y enlaces al otro:
+                                justify-between en una fila.
+ Pie                Flexbox     [COMPLETAR: o Grid si hiciste columnas]
+
+(En las cards de ruta tambien use Grid: grid grid-cols-2 para los datos.)
+[COMPLETAR: ajusta cada fila a lo que realmente usaste.]
+
+======================================================================
+8. TIEMPO, LINEAS Y BALANCE BOOTSTRAP
+======================================================================
+Tiempo invertido: [COMPLETAR] horas (version propia) / [COMPLETAR] (Bootstrap)
+Distribucion de la flota:
+  Version propia (CSS escrito a mano): [COMPLETAR] lineas
+  (cuenta con: wc -l css/*.css  o  cuenta solo las reglas de la flota)
+  Con el framework ahora: [COMPLETAR] clases usadas
+
+Que me dio Bootstrap sin esfuerzo:
+  - Cuadricula responsive (row / col-*) sin escribir media queries.
+  - Barra de navegacion que colapsa en movil.
+  - Botones y componentes con estilo coherente listos.
+  [COMPLETAR: agrega lo que notaste]
+
+Que control perdi:
+  - El aspecto es reconocible como "Bootstrap" y personalizarlo exige
+    sobrescribir sus estilos.
+  - Hay CSS que no uso pero igual se descarga.
+  - Algunas decisiones de espaciado y tamano vienen impuestas.
+  [COMPLETAR: agrega tu experiencia]
+
+======================================================================
+9. CINCO CLASES ENCONTRADAS EN LA DOCUMENTACION
+======================================================================
+ CLASE                 QUE HACE
+ --------------------  -------------------------------------------------
+ space-y-6             Separa verticalmente los hijos directos con el
+                       mismo espacio, sin margen en el primero.
+ object-cover          Hace que la imagen llene su caja recortando lo que
+                       sobra, sin deformarla.
+ focus-visible:ring-2  Dibuja un anillo de 2 px solo cuando el foco llega
+                       por teclado.
+ border-l-4            Borde grueso solo en el lado izquierdo (alertas).
+ placeholder:text-*    Da color al texto de ejemplo dentro del input.
+ focus-within          Estiliza el contenedor cuando un hijo tiene foco.
+[COMPLETAR: deja solo las cinco que de verdad buscaste en tailwindcss.com/docs]
+
+======================================================================
+10. BOTON: BOOTSTRAP (SEMANA 2) VS TAILWIND (HOY)
+======================================================================
+Semana 2, Bootstrap:
+  [COMPLETAR: pega tu codigo real, p. ej.
+   <a href="#inscripcion" class="btn btn-warning btn-lg">Inscribete</a>]
+  Elegi una clase de componente ya disenada y el framework decidio
+  color, relleno, radio y hover.
+
+Hoy, Tailwind:
+  <a href="#inscripcion"
+     class="inline-block rounded-lg bg-yellow-400 px-8 py-4 text-base
+            font-bold text-slate-950 hover:bg-yellow-300
+            focus:outline-none focus-visible:ring-2
+            focus-visible:ring-yellow-300 focus-visible:ring-offset-2
+            focus-visible:ring-offset-slate-900">Inscribete</a>
+  Yo compuse cada decision (color, relleno, radio, hover, foco) con
+  utilidades pequenas.
+
+Diferencia clave: un framework de componentes (Bootstrap) entrega piezas
+terminadas con un nombre ("btn") y su apariencia viene decidida; es
+rapido pero cuesta personalizarlo. Uno utility-first (Tailwind) entrega
+bloques pequenos de una sola propiedad que se combinan en el HTML; hay
+mas control y menos CSS propio, a cambio de mas clases por elemento.
+
+======================================================================
+11. REGLAS DEL KIT (aplicadas en botones, card, alertas e inputs)
+======================================================================
+Radios de borde:
+  rounded-lg   controles (botones, inputs, alertas)
+  rounded-2xl  contenedores (cards, formularios, secciones)
+  rounded-full solo etiquetas de nivel
+
+Escala de espaciado (multiplos de 4 px):
+  p-4 alertas; p-6 cards y formularios; px-8 py-4 botones;
+  px-4 py-3 inputs; space-y-2 etiqueta-input-ayuda;
+  space-y-4 entre alertas; space-y-6 entre grupos; gap-4 entre botones.
+
+Colores:
+  Fondos: slate-950 (pagina), slate-900 (superficies), slate-800 (interior)
+  Bordes: slate-700 (contenedores), slate-600 (controles)
+  Texto: slate-100 (principal), slate-300 (secundario), slate-400 (etiquetas)
+  Acento: yellow-400
+  Semanticos: sky (info), emerald (exito), amber (advertencia), rose (alta)
+  Alertas: fondo /10, borde /30, titulo en tono 300.
+
+Foco: siempre visible (ring-2 + ring-offset en botones; borde amarillo +
+ring-2 en inputs). Nunca se quita el contorno sin reemplazarlo.
+
+Inconsistencia detectada: el anillo de foco de los botones cambia de color
+por variante, pero en inputs siempre es amarillo. [COMPLETAR: unifique /
+lo deje asi porque ...]
+
+======================================================================
+CONFIGURACION Y PRIMERAS INCIDENCIAS
+======================================================================
+- Corri la CLI de Tailwind v4 en modo observacion:
+  npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+- Quite el CDN @tailwindcss/browser@4 del prototipo para que los estilos
+  vinieran de output.css y no del navegador.
+- Errores corregidos en el prototipo: "<tittle>" en vez de "<title>" y
+  falta de la etiqueta <body> de apertura.
+- Incidencia: el CSS no cargaba porque el <link> apuntaba a una carpeta
+  incorrecta. Estructura del trabajo: src/output.css en la raiz del repo
+  y las paginas en nocturna/. Se corrige con la ruta relativa
+  "../src/output.css". Lo detecte con DevTools > Network (404).
+- GitHub Pages no ejecuta la CLI: por eso src/output.css se sube al repo
+  y node_modules se excluye con .gitignore.
+- Prueba de clase usada vs no usada:
+    bg-yellow-400 -> aparece en output.css ([COMPLETAR] coincidencias)
+    bg-pink-500   -> no aparece (0 coincidencias)
+  Causa: Tailwind escanea los archivos fuente y genera solo el CSS de las
+  clases que encuentra escritas completas. bg-pink-500 existe en el
+  framework, pero no esta en ningun archivo escaneado.
+  [COMPLETAR] Al agregarla al HTML, el watch la genero; al quitarla, desaparecio.
+- Prueba de teclado en los botones:
+    Tab recorre en orden: [COMPLETAR si/no]
+    Shift+Tab en orden inverso: [COMPLETAR si/no]
+    Anillo de foco visible en los 3 botones: [COMPLETAR si/no]
+    Enter activa el enlace: [COMPLETAR]. Espacio no lo activa porque son
+    <a> y no <button> (comportamiento esperado).
