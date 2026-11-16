@@ -366,3 +366,81 @@ Para el proyecto Rueda Libre considero que Tailwind CSS es la mejor opción, por
 Aunque Bootstrap tiene una curva de aprendizaje más sencilla al principio, Tailwind permite tener mayor control sobre el diseño y generar un CSS ajustado a las clases utilizadas en el proyecto.
 
 Esta actividad me permitió comprender que no existe un framework que sea mejor para todos los proyectos. La elección depende de las necesidades, el diseño y los objetivos de cada sitio web.
+## Actividad: Formulario de inscripción – Rueda Nocturna
+
+### 1. Objetivo
+
+Crear un formulario de inscripción semántico, accesible y adaptable a dispositivos móviles para que los usuarios puedan registrarse en las rutas de Rueda Nocturna.
+
+### 2. Estructura del formulario
+
+Se agregó una sección de inscripción con tres grupos de campos utilizando las etiquetas `<fieldset>` y `<legend>`:
+
+- **Datos personales:** nombre completo, correo electrónico y celular.
+- **Información de la salida:** ruta, día de salida, número de acompañantes y nivel de experiencia.
+- **Requisitos de participación:** bicicleta propia y aceptación de condiciones.
+
+Se utilizaron diferentes controles HTML según el tipo de información:
+- `input type="text"` para el nombre.
+- `input type="email"` para el correo.
+- `input type="tel"` para el celular.
+- `select` para las opciones de ruta, día, acompañantes y experiencia.
+- `input type="radio"` para elegir si se tiene bicicleta propia.
+- `input type="checkbox"` para aceptar las condiciones.
+
+Cada campo cuenta con una etiqueta asociada mediante los atributos `for` e `id`.
+
+### 3. Validaciones implementadas
+
+Se utilizaron atributos de validación nativa de HTML:
+
+| Campo | Validación |
+|---|---|
+| Nombre | `required` y `minlength="3"` |
+| Correo | `required` y `type="email"` |
+| Celular | `required` y `pattern="3[0-9]{9}"` |
+| Ruta | `required` |
+| Día | `required` |
+| Acompañantes | Opciones entre 0 y 3 |
+| Experiencia | `required` |
+| Bicicleta propia | Selección obligatoria |
+| Condiciones | Casilla `required` |
+
+También se agregó el atributo `title` al celular para explicar el formato solicitado.
+
+### 4. Diseño y accesibilidad
+
+Se utilizaron clases de Tailwind CSS para organizar los campos en una columna en dispositivos pequeños y dos columnas desde el punto de quiebre `md`.
+
+Se mantuvieron los colores de identidad de Rueda Libre y se agregó soporte para modo oscuro mediante clases `dark:`.
+
+Los campos tienen estilos de enfoque `focus:` para facilitar la navegación y reconocer qué elemento está seleccionado.
+
+Para el botón de envío se reutilizó la clase `btn-primary` del kit de componentes, junto con `w-full` para ocupar el ancho disponible.
+
+### 5. Pruebas realizadas
+
+Pendiente de completar después de probar el formulario:
+
+- Formulario vacío: [indicar resultado].
+- Datos inválidos: [indicar resultado].
+- Formulario completo: [indicar resultado].
+- Navegación únicamente con teclado: [indicar resultado].
+- Diseño en celular y escritorio: [indicar resultado].
+- Modo claro y oscuro: [indicar resultado].
+
+### 6. Tiempo de desarrollo
+
+Tiempo establecido para la actividad: 40 minutos.
+
+Tiempo real empleado: 38 minutos.
+
+### 7. Pendientes y observaciones
+
+El formulario cuenta con validación nativa del navegador, pero todavía necesita conectarse a un servicio de recepción o almacenamiento para que las inscripciones lleguen al cliente.
+
+### 8. Conclusión
+
+Esta actividad permitió aplicar los conceptos de formularios semánticos en HTML, validaciones nativas y diseño responsive con Tailwind CSS.
+
+También permitió reutilizar componentes propios del proyecto, mantener la identidad visual de Rueda Libre y mejorar la experiencia de navegación mediante etiquetas asociadas y controles accesibles.
