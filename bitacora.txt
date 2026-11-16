@@ -233,3 +233,13 @@ CONFIGURACION Y PRIMERAS INCIDENCIAS
     Anillo de foco visible en los 3 botones: [COMPLETAR si/no]
     Enter activa el enlace: [COMPLETAR]. Espacio no lo activa porque son
     <a> y no <button> (comportamiento esperado).
+
+Para organizar la landing utilicé etiquetas semánticas como header, main, section, article y footer.
+
+En el encabezado utilicé Flex para distribuir el logo, los enlaces y el botón de inscripción en una misma fila.
+
+Para las rutas utilicé Grid con tres columnas porque necesitaba mostrar las tres tarjetas en una sola fila. Para la sección de cómo funciona utilicé Grid con cuatro columnas para distribuir los cuatro pasos.
+
+Finalmente, utilicé Flex en el pie de página para organizar los tres bloques de información horizontalmente.
+
+También utilicé el mismo contenedor en las diferentes secciones para mantener el contenido centrado y con el mismo ancho máximo.
