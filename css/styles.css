@@ -13,7 +13,10 @@
   --color-crema: #FAF6EF;
   --color-gris-asfalto: #5B6470;
   --color-blanco: #FFFFFF;
-    
+  --color-amarillo-farol: #FFD166;
+
+  --bs-warning: var(--color-amarillo-farol);
+  --bs-warning-rgb: 255, 209, 102;
   --bs-primary: var(--color-verde-ruta);
   --bs-primary-rgb: 30, 122, 79;
 
