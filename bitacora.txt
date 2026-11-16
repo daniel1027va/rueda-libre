@@ -280,3 +280,43 @@ También se ajustaron los tamaños de texto, el relleno de las secciones y la di
 | 1280 px | 3 columnas | Contenido centrado y aprovechamiento del espacio |
 
 **Nota:** Los anchos corresponden a las pruebas que se deben verificar en DevTools, modo dispositivo.
+
+## Actividad: Personalización del tema y modo oscuro
+
+### 1. Personalización de colores
+
+Se creó un tema personalizado utilizando `@theme` de Tailwind CSS.
+
+Se definieron los cinco colores de la marca Rueda Libre:
+
+- Verde Ruta: #1E7A4F
+- Naranja Pedal: #F39A2B
+- Azul Noche: #14213D
+- Crema: #FAF6EF
+- Gris Asfalto: #5B6470
+
+También se agregó el nuevo color de campaña Amarillo Farol: #FFD166.
+
+### 2. Tipografías
+
+Se cargaron las fuentes Montserrat y Open Sans desde Google Fonts.
+
+Se utilizó Montserrat para los títulos y Open Sans para los textos generales.
+
+### 3. Modo oscuro
+
+Se agregaron clases `dark:` a los fondos, textos, tarjetas, bordes y campos de formulario.
+
+Se utilizó la estrategia predeterminada de Tailwind, que detecta la preferencia de color del sistema operativo.
+
+### 4. Contraste
+
+Se revisaron las combinaciones de colores para cumplir el contraste WCAG AA de 4.5:1 para textos normales.
+
+Se identificó que Verde Ruta sobre Azul Noche no alcanza el contraste necesario. Por eso se utilizaron Crema y Amarillo Farol para los textos en fondos oscuros.
+
+### 5. Pruebas
+
+Se probó la landing y el kit de componentes utilizando la emulación de modo oscuro de Chrome DevTools.
+
+Se verificó que los fondos, textos, tarjetas y formularios conservaran una apariencia legible en ambos temas.
