@@ -243,3 +243,40 @@ Para las rutas utilicé Grid con tres columnas porque necesitaba mostrar las tre
 Finalmente, utilicé Flex en el pie de página para organizar los tres bloques de información horizontalmente.
 
 También utilicé el mismo contenedor en las diferentes secciones para mantener el contenido centrado y con el mismo ancho máximo.
+
+## Actividad: Diseño responsive con Tailwind
+
+### 1. Problemas identificados a 360 px
+
+Al revisar la estructura original encontré los siguientes aspectos que necesitaban adaptación:
+
+- El contenedor principal tenía demasiado relleno para una pantalla pequeña.
+- Los títulos utilizaban tamaños grandes que podían ocupar demasiado espacio.
+- Las tarjetas de rutas no estaban organizadas mediante una cuadrícula.
+- Los espacios entre secciones podían reducirse en celulares.
+- Los botones necesitaban ajustarse mejor al ancho disponible.
+- El contenedor de las rutas tenía un ancho máximo de 2xl, que no aprovechaba correctamente las pantallas grandes.
+
+### 2. Cambios realizados
+
+Se aplicó el enfoque mobile-first de Tailwind:
+
+- Sin prefijo para los estilos de celular.
+- `sm:` para pantallas desde 640 px.
+- `md:` para pantallas desde 768 px.
+- `lg:` para pantallas desde 1024 px.
+
+Para las rutas se utilizó Grid con una columna en celular, dos columnas desde sm y tres columnas desde lg.
+
+También se ajustaron los tamaños de texto, el relleno de las secciones y la distribución de los elementos de las tarjetas.
+
+### 3. Tabla de pruebas responsive
+
+| Ancho | Rutas | Comportamiento esperado |
+|---|---|---|
+| 360 px | 1 columna | Contenido vertical, sin scroll horizontal |
+| 768 px | 2 columnas | Tarjetas distribuidas en dos columnas |
+| 1024 px | 3 columnas | Tres tarjetas en una fila |
+| 1280 px | 3 columnas | Contenido centrado y aprovechamiento del espacio |
+
+**Nota:** Los anchos corresponden a las pruebas que se deben verificar en DevTools, modo dispositivo.
