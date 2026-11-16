@@ -18,3 +18,29 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-open-sans: "Open Sans", sans-serif;
 }
+
+@layer components {
+  .btn-primary {
+    @apply inline-block rounded-lg bg-amarillo-farol px-8 py-4 text-base font-bold text-azul-noche
+    hover:bg-naranja-pedal
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-amarillo-farol
+    focus-visible:ring-offset-2 focus-visible:ring-offset-crema
+    dark:focus-visible:ring-offset-azul-noche;
+  }
+
+  .btn-secondary {
+    @apply inline-block rounded-lg border border-gris-asfalto bg-azul-noche px-8 py-4 text-base font-bold text-crema
+    hover:border-amarillo-farol hover:bg-verde-ruta
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-amarillo-farol
+    focus-visible:ring-offset-2 focus-visible:ring-offset-crema
+    dark:focus-visible:ring-offset-azul-noche;
+  }
+
+  .btn-text {
+    @apply inline-block rounded-lg px-8 py-4 text-base font-bold text-azul-noche dark:text-amarillo-farol
+    hover:bg-amarillo-farol/20
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-amarillo-farol
+    focus-visible:ring-offset-2 focus-visible:ring-offset-crema
+    dark:focus-visible:ring-offset-azul-noche;
+  }
+}

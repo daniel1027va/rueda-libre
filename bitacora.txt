@@ -320,3 +320,49 @@ Se identificó que Verde Ruta sobre Azul Noche no alcanza el contraste necesario
 Se probó la landing y el kit de componentes utilizando la emulación de modo oscuro de Chrome DevTools.
 
 Se verificó que los fondos, textos, tarjetas y formularios conservaran una apariencia legible en ambos temas.
+
+## Comparación entre Bootstrap y Tailwind CSS
+
+### 1. Curva de aprendizaje
+
+Bootstrap es más sencillo para comenzar porque ofrece componentes prediseñados, como botones, tarjetas, formularios y menús. Esto permite construir una página rápidamente sin escribir tantos estilos.
+
+Tailwind CSS requiere conocer sus clases de utilidad y entender cómo combinarlas para conseguir el diseño deseado. Al principio puede ser un poco más difícil, pero permite trabajar directamente sobre el HTML.
+
+### 2. Personalización
+
+Bootstrap permite personalizar los componentes, pero en ocasiones es necesario modificar CSS adicional para conseguir un diseño específico.
+
+Tailwind ofrece mayor control sobre los estilos porque permite modificar directamente aspectos como colores, tamaños, espacios, tipografías y estados de los elementos.
+
+Para Rueda Libre, Tailwind permite utilizar los colores y estilos propios de la marca de una manera más directa.
+
+### 3. Tamaño final
+
+Durante la actividad se generó un archivo CSS minificado de Tailwind utilizando el comando `--minify`.
+
+Los resultados obtenidos fueron:
+
+| Recurso | Tamaño |
+|---|---:|
+| Tailwind CSS | 27.439 bytes (aprox. 27 KB) |
+| Bootstrap CSS | 243 KB |
+| Bootstrap JS | 286 KB |
+
+En esta medición, el archivo CSS generado por Tailwind fue considerablemente más pequeño que el CSS de Bootstrap.
+
+Es importante aclarar que los valores corresponden a recursos diferentes: se está comparando el CSS generado por Tailwind con los archivos CSS y JavaScript de Bootstrap por separado.
+
+### 4. Casos de uso
+
+Bootstrap es una buena opción para proyectos que necesitan desarrollarse rápidamente y que pueden aprovechar sus componentes prediseñados.
+
+Tailwind es una buena alternativa para proyectos que necesitan diseños personalizados, control sobre los estilos y una identidad visual propia.
+
+### 5. Conclusión: ¿Cuál es mejor para Rueda Libre?
+
+Para el proyecto Rueda Libre considero que Tailwind CSS es la mejor opción, porque permite mantener una identidad visual propia, utilizar los colores de la marca y adaptar los componentes a las necesidades de la página.
+
+Aunque Bootstrap tiene una curva de aprendizaje más sencilla al principio, Tailwind permite tener mayor control sobre el diseño y generar un CSS ajustado a las clases utilizadas en el proyecto.
+
+Esta actividad me permitió comprender que no existe un framework que sea mejor para todos los proyectos. La elección depende de las necesidades, el diseño y los objetivos de cada sitio web.
