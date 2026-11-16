@@ -13,6 +13,29 @@
   --color-crema: #FAF6EF;
   --color-gris-asfalto: #5B6470;
   --color-blanco: #FFFFFF;
+    
+  --bs-primary: var(--color-verde-ruta);
+  --bs-primary-rgb: 30, 122, 79;
+
+  --bs-secondary: var(--color-naranja-pedal);
+  --bs-secondary-rgb: 243, 154, 43;
+
+  --bs-success: var(--color-verde-ruta);
+  --bs-success-rgb: 30, 122, 79;
+
+  --bs-dark: var(--color-azul-noche);
+  --bs-dark-rgb: 20, 33, 61;
+
+  --bs-light: var(--color-crema);
+  --bs-light-rgb: 250, 246, 239;
+
+  --bs-body-color: var(--color-azul-noche);
+  --bs-body-bg: var(--color-crema);
+
+  --bs-link-color: var(--color-verde-ruta);
+  --bs-link-hover-color: var(--color-naranja-pedal);
+
+  --bs-font-sans-serif: var(--fuente-textos);
 
   /* Tipografías (con fuente de respaldo) */
   --fuente-titulos: "Montserrat", sans-serif;
@@ -23,6 +46,8 @@
   --espacio-mediano: 1rem;
   --espacio-grande: 2rem;
 }
+  
+
 
 /* ===== Herencia desde el body ===== */
 body {
